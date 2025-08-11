@@ -1,0 +1,164 @@
+﻿<Window x:Class="PL.Call.CallListWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        xmlns:local="clr-namespace:PL.Call"
+        mc:Ignorable="d"
+        Title="CallListWindow" Height="640" Width="800"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+    <!--External Grid-->
+    <Grid Height="624" VerticalAlignment="Bottom">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"/>
+            <RowDefinition Height="208*"/>
+            <RowDefinition Height="Auto" MinHeight="74"/>
+        </Grid.RowDefinitions>
+        <!--Internal, Upper Grid-->
+        <Grid Height="auto" Grid.Row="0" Width="auto">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Label for "List of Calls" -->
+            <Label Grid.Column="0"  Content="List of Calls" HorizontalAlignment="center"  VerticalAlignment="center" Height="auto" Width="auto" Background="#00000000" FontWeight="Bold" FontSize="25"/>
+            <!-- ComboBox for sorting options (binds to Sort property) -->
+            <ComboBox  Text="Select an option to sort by"  SelectedValue="{Binding Sort, Mode=TwoWay}"
+                   SelectionChanged="ComboBox_SelectionChanged"
+                IsEditable="True" ItemsSource="{Binding Source={StaticResource CallInListCollectionKey}}"
+                Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Height="27" Width="212"  ToolTipService.InitialShowDelay="100"
+                ToolTipService.ShowDuration="5000" ToolTip = "Sort by a certain value" FontWeight="Bold" />
+            <!-- Menu for filtering the call list -->
+            <Menu Grid.Column="2" HorizontalAlignment="center" VerticalAlignment="center">
+                <MenuItem Header="Select an option to filter by" FontWeight="Bold">
+                    <MenuItem Header="No filter" Tag="NoFilter" Click="MenuItem_Click"/>
+                    <MenuItem Header="Call status">
+                        <MenuItem.ItemsSource>
+                            <StaticResource ResourceKey="CallStatusCollectionKey"/>
+                        </MenuItem.ItemsSource>
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="MenuItem">
+                                <Setter Property="Header" Value="{Binding}"/>
+                                <Setter Property="Tag" Value="{Binding}"/>
+                                <EventSetter Event="Click" Handler="MenuItem_Click"/>
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                    <MenuItem Header="Type of call">
+                        <MenuItem.ItemsSource>
+                            <StaticResource ResourceKey="CallTypeCollectionKey"/>
+                        </MenuItem.ItemsSource>
+                        <MenuItem.ItemContainerStyle>
+                            <Style TargetType="MenuItem">
+                                <Setter Property="Header" Value="{Binding}"/>
+                                <Setter Property="Tag" Value="{Binding}"/>
+                                <EventSetter Event="Click" Handler="MenuItem_Click"/>
+                            </Style>
+                        </MenuItem.ItemContainerStyle>
+                    </MenuItem>
+                </MenuItem>
+            </Menu>
+        </Grid>
+        <DataGrid ItemsSource="{Binding Path=CallList}" Grid.Row="1" Width="Auto"
+          SelectedItem="{Binding SelectedCall}" IsReadOnly="True" FontWeight="ExtraBold"
+          AutoGenerateColumns="False" MouseDoubleClick="CallList_MouseDoubleClick"
+          RowBackground="#80D3D3D3" AlternatingRowBackground="#80FFFFFF" Background="Transparent" >
+            <DataGrid.Columns>
+                <!-- Column for the "Delete" button -->
+                <DataGridTemplateColumn Header="Delete" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Delete" Click="DeleteButton_Click" BorderBrush="Black" Background="#FFF48080" FontWeight="Bold" FontSize="13" FontStyle="Normal"
+                            ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip="Click to delete this call">
+                                <Button.Visibility>
+                                    <MultiBinding Converter="{StaticResource CallVisibilityDeleteConverterKey}">
+                                        <Binding Path="CallId"/>
+                                        <Binding Path="Status"/>
+                                    </MultiBinding>
+                                </Button.Visibility>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+                <!--Column for the "Cancel" button-->
+                <DataGridTemplateColumn Header="Cancel" Width="Auto">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Content="Cancel" Click="CancelButton_Click" BorderBrush="Black" Background="#FFF48080" FontWeight="Bold" FontSize="13" FontStyle="Normal"
+                                    ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip="Click to Cancel this call">
+                                <Button.Visibility>
+                                    <Binding Path="Status" Converter="{StaticResource CallVisibilityForCancelConverterKey}" />
+                                </Button.Visibility>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+
+
+
+                <!-- Columns for CallInList details -->
+                <DataGridTextColumn Binding="{Binding CallId}" Header="Call ID" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Type}" Header="Call Type" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding AssignmateId}" Header="Last Assignmate" Width="Auto"/>
+
+                <!-- Displaying Call Status -->
+                <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="Auto">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Status}" Value="Open">
+                                    <Setter Property="Foreground" Value="Green" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="InTreatment">
+                                    <Setter Property="Foreground" Value="#FF008AFF" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="Close">
+                                    <Setter Property="Foreground" Value="#FF2E22C3" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="Expired">
+                                    <Setter Property="Foreground" Value="Red" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="OpenAtRisk">
+                                    <Setter Property="Foreground" Value="#FFFF9800" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Status}" Value="RiskTreatment">
+                                    <Setter Property="Foreground" Value="Purple" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+
+                <!-- Displaying the Opening Time -->
+                <DataGridTextColumn Binding="{Binding OpeningTime, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="Opening Time" Width="Auto"/>
+
+                <!-- Displaying Time to End (if available) -->
+                <DataGridTextColumn Binding="{Binding TimeToEnd, StringFormat='d\\:hh\\:mm\\:ss'}" Header="Time To End" Width="Auto"/>
+
+                <!-- Displaying Total Treatment Time (if available) -->
+                <DataGridTextColumn Binding="{Binding TotalTreatmentTime, StringFormat='hh\\:mm\\:ss'}" Header="Total Treatment Time" Width="Auto"/>
+
+                <!-- Displaying Last Volunteer -->
+                <DataGridTextColumn Binding="{Binding LastVolunteer}" Header="Last Volunteer" Width="Auto"/>
+
+                <!-- Displaying the Number of Assignmates -->
+                <DataGridTextColumn Binding="{Binding NumberOfAssignmates}" Header="Number of Assignmates" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+        <!--"Add a Call" button at the bottom-->
+
+        <Button Content="Add a Call"  FontSize="18" Grid.Row="2" Width="150" Height ="45"  Click="AddButton_Click" ToolTipService.InitialShowDelay="100"
+        ToolTipService.ShowDuration="5000" ToolTip="Tap to add a new call"/>
+        <Image  Source="/image/image8.jpeg" Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.4" Stretch="Fill" Canvas.ZIndex="-1"  />
+
+    </Grid>
+</Window>

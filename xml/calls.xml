@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfCall xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Call>
+    <Id>1</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>Wingate 38 Herzliya</FullCallAddress>
+    <Latitude>32.1793471</Latitude>
+    <Longitude>34.8058526</Longitude>
+    <OpeningTime>2023-08-25T00:00:00</OpeningTime>
+    <VerbalDescription>We’re planning a motivational session for the soldiers.</VerbalDescription>
+    <MaxTimeToFinish>2026-08-25T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>2</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Abba Eban 2 Herzliya</FullCallAddress>
+    <Latitude>32.1607272</Latitude>
+    <Longitude>34.8103495</Longitude>
+    <OpeningTime>2024-09-28T00:00:00</OpeningTime>
+    <VerbalDescription>Who can keep a package safe until the weekend?</VerbalDescription>
+    <MaxTimeToFinish>2027-09-28T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>3</Id>
+    <Type>MotivationalTalks</Type>
+    <FullCallAddress>Arlozorov 4 Herzliya</FullCallAddress>
+    <Latitude>32.1606701</Latitude>
+    <Longitude>34.8428238</Longitude>
+    <OpeningTime>2024-02-28T00:00:00</OpeningTime>
+    <VerbalDescription>Field equipment is damaged. Who can repair or replace it?</VerbalDescription>
+    <MaxTimeToFinish>2027-02-28T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>4</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Ben Yehuda 12 Herzliya</FullCallAddress>
+    <Latitude>32.1627761</Latitude>
+    <Longitude>34.8451422</Longitude>
+    <OpeningTime>2023-09-05T00:00:00</OpeningTime>
+    <VerbalDescription>Who can take care of a load of laundry for the soldiers?</VerbalDescription>
+    <MaxTimeToFinish>2026-09-05T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>5</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Hagalil 11 Herzliya</FullCallAddress>
+    <Latitude>32.1658838</Latitude>
+    <Longitude>34.8439588</Longitude>
+    <OpeningTime>2024-03-12T00:00:00</OpeningTime>
+    <VerbalDescription>A soldier twisted his ankle and needs medical attention.</VerbalDescription>
+    <MaxTimeToFinish>2027-03-12T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>6</Id>
+    <Type>MotivationalTalks</Type>
+    <FullCallAddress>Maskit 27 Herzliya</FullCallAddress>
+    <Latitude>32.1632571</Latitude>
+    <Longitude>34.8107107</Longitude>
+    <OpeningTime>2024-11-05T00:00:00</OpeningTime>
+    <VerbalDescription>Two soldiers are stranded without transportation. Can anyone help?</VerbalDescription>
+    <MaxTimeToFinish>2027-11-05T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>7</Id>
+    <Type>FoodDelivery</Type>
+    <FullCallAddress>Ben Gurion 12 Herzliya</FullCallAddress>
+    <Latitude>32.1650377</Latitude>
+    <Longitude>34.8424487</Longitude>
+    <OpeningTime>2023-03-22T00:00:00</OpeningTime>
+    <VerbalDescription>Extra food supplies are required for tomorrow's operations.</VerbalDescription>
+    <MaxTimeToFinish>2026-03-22T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>8</Id>
+    <Type>EquipmentRepair</Type>
+    <FullCallAddress>Ramat Yam 60 Herzliya</FullCallAddress>
+    <Latitude>32.171456</Latitude>
+    <Longitude>34.800546</Longitude>
+    <OpeningTime>2023-02-05T00:00:00</OpeningTime>
+    <VerbalDescription>We’re organizing a celebration for the unit. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2026-02-05T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>9</Id>
+    <Type>FoodDelivery</Type>
+    <FullCallAddress>Weizmann 8 Kfar Saba</FullCallAddress>
+    <Latitude>32.1779805</Latitude>
+    <Longitude>34.8957918</Longitude>
+    <OpeningTime>2024-12-20T00:00:00</OpeningTime>
+    <VerbalDescription>First aid assistance is needed at the base immediately.</VerbalDescription>
+    <MaxTimeToFinish>2027-12-20T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>10</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Shenkar 3 Herzliya</FullCallAddress>
+    <Latitude>32.1602438</Latitude>
+    <Longitude>34.8095785</Longitude>
+    <OpeningTime>2023-02-26T00:00:00</OpeningTime>
+    <VerbalDescription>A group of soldiers needs transport back to their barracks.</VerbalDescription>
+    <MaxTimeToFinish>2026-02-26T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>11</Id>
+    <Type>StorageOfBelongings</Type>
+    <FullCallAddress>Herzl 20 Netanya</FullCallAddress>
+    <Latitude>32.3290299</Latitude>
+    <Longitude>34.8555807</Longitude>
+    <OpeningTime>2023-09-25T00:00:00</OpeningTime>
+    <VerbalDescription>We need help laundering blankets for a large unit.</VerbalDescription>
+    <MaxTimeToFinish>2026-09-25T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>12</Id>
+    <Type>EventOrganization</Type>
+    <FullCallAddress>Ben Gurion 1 Netanya</FullCallAddress>
+    <Latitude>32.279103</Latitude>
+    <Longitude>34.852303</Longitude>
+    <OpeningTime>2024-03-08T00:00:00</OpeningTime>
+    <VerbalDescription>A unit requires equipment to be delivered to a remote location.</VerbalDescription>
+    <MaxTimeToFinish>2027-03-08T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>13</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>Haatzmaut 34 Sderot</FullCallAddress>
+    <Latitude>31.5300071</Latitude>
+    <Longitude>34.5897336</Longitude>
+    <OpeningTime>2024-06-13T00:00:00</OpeningTime>
+    <VerbalDescription>A unit requires equipment to be delivered to a remote location.</VerbalDescription>
+    <MaxTimeToFinish>2027-06-13T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>14</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Tchernichovsky 7 Netanya</FullCallAddress>
+    <Latitude>32.3219803</Latitude>
+    <Longitude>34.8527596</Longitude>
+    <OpeningTime>2023-02-24T00:00:00</OpeningTime>
+    <VerbalDescription>A group of soldiers needs transport back to their barracks.</VerbalDescription>
+    <MaxTimeToFinish>2026-02-24T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>15</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Dizengoff 16 Netanya</FullCallAddress>
+    <Latitude>32.3306203</Latitude>
+    <Longitude>34.8543236</Longitude>
+    <OpeningTime>2023-09-26T00:00:00</OpeningTime>
+    <VerbalDescription>Looking for a motivational speaker to uplift the soldiers.</VerbalDescription>
+    <MaxTimeToFinish>2026-09-26T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>16</Id>
+    <Type>EquipmentRepair</Type>
+    <FullCallAddress>Sheshet Hayamim 3 Netanya</FullCallAddress>
+    <Latitude>32.321458</Latitude>
+    <Longitude>34.853196</Longitude>
+    <OpeningTime>2023-04-05T00:00:00</OpeningTime>
+    <VerbalDescription>Who can keep a package safe until the weekend?</VerbalDescription>
+    <MaxTimeToFinish>2026-04-05T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>17</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Ruppin 21 Netanya</FullCallAddress>
+    <Latitude>32.28087</Latitude>
+    <Longitude>34.853791</Longitude>
+    <OpeningTime>2023-10-12T00:00:00</OpeningTime>
+    <VerbalDescription>Critical supplies need transportation to the frontline. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2026-10-12T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>18</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>HaNeviim 18 Netanya</FullCallAddress>
+    <Latitude>32.2967773</Latitude>
+    <Longitude>34.8577569</Longitude>
+    <OpeningTime>2023-06-04T00:00:00</OpeningTime>
+    <VerbalDescription>Support is needed for soldiers dealing with stress.</VerbalDescription>
+    <MaxTimeToFinish>2026-06-04T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>19</Id>
+    <Type>Laundry</Type>
+    <FullCallAddress>Ben Ami 28 Netanya</FullCallAddress>
+    <Latitude>32.321458</Latitude>
+    <Longitude>34.853196</Longitude>
+    <OpeningTime>2023-04-07T00:00:00</OpeningTime>
+    <VerbalDescription>A unit requires equipment to be delivered to a remote location.</VerbalDescription>
+    <MaxTimeToFinish>2026-04-07T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>20</Id>
+    <Type>FoodDelivery</Type>
+    <FullCallAddress>Tchernichovsky 32 Netanya</FullCallAddress>
+    <Latitude>32.3208972</Latitude>
+    <Longitude>34.8557568</Longitude>
+    <OpeningTime>2023-08-07T00:00:00</OpeningTime>
+    <VerbalDescription>Urgent medical supplies are required for a nearby unit.</VerbalDescription>
+    <MaxTimeToFinish>2026-08-07T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>21</Id>
+    <Type>StorageOfBelongings</Type>
+    <FullCallAddress>Ahuza 124 Raanana</FullCallAddress>
+    <Latitude>32.1808257</Latitude>
+    <Longitude>34.8739939</Longitude>
+    <OpeningTime>2023-01-20T00:00:00</OpeningTime>
+    <VerbalDescription>Temporary storage is required for heavy equipment.</VerbalDescription>
+    <MaxTimeToFinish>2026-01-20T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>22</Id>
+    <Type>PsychologicalAssistance</Type>
+    <FullCallAddress>HaPalmach 18 Raanana</FullCallAddress>
+    <Latitude>32.1905863</Latitude>
+    <Longitude>34.8741786</Longitude>
+    <OpeningTime>2024-07-30T00:00:00</OpeningTime>
+    <VerbalDescription>A unit requires equipment to be delivered to a remote location.</VerbalDescription>
+    <MaxTimeToFinish>2027-07-30T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>23</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Weizmann 40 Kfar Saba</FullCallAddress>
+    <Latitude>32.1705469</Latitude>
+    <Longitude>34.9286637</Longitude>
+    <OpeningTime>2023-06-01T00:00:00</OpeningTime>
+    <VerbalDescription>Tents were torn in the storm and need fixing ASAP.</VerbalDescription>
+    <MaxTimeToFinish>2026-06-01T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>24</Id>
+    <Type>Laundry</Type>
+    <FullCallAddress>Herzl 53 Raanana</FullCallAddress>
+    <Latitude>32.1775266</Latitude>
+    <Longitude>34.8678441</Longitude>
+    <OpeningTime>2024-05-25T00:00:00</OpeningTime>
+    <VerbalDescription>First aid assistance is needed at the base immediately.</VerbalDescription>
+    <MaxTimeToFinish>2027-05-25T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>25</Id>
+    <Type>MotivationalTalks</Type>
+    <FullCallAddress>Nordau 5 Raanana</FullCallAddress>
+    <Latitude>32.1854065</Latitude>
+    <Longitude>34.8853162</Longitude>
+    <OpeningTime>2024-09-21T00:00:00</OpeningTime>
+    <VerbalDescription>Unit gear needs to be held securely while repairs are done.</VerbalDescription>
+    <MaxTimeToFinish>2027-09-21T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>26</Id>
+    <Type>FoodDelivery</Type>
+    <FullCallAddress>HaRav Kook 10 Raanana</FullCallAddress>
+    <Latitude>32.1961516</Latitude>
+    <Longitude>34.8743499</Longitude>
+    <OpeningTime>2023-02-19T00:00:00</OpeningTime>
+    <VerbalDescription>Organizing a talk to inspire the unit. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2026-02-19T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>27</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>HaYovel 16 Raanana</FullCallAddress>
+    <Latitude>32.1843411</Latitude>
+    <Longitude>34.8725648</Longitude>
+    <OpeningTime>2024-11-14T00:00:00</OpeningTime>
+    <VerbalDescription>Wet clothes need drying and folding. Assistance required.</VerbalDescription>
+    <MaxTimeToFinish>2027-11-14T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>28</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>Ben Gurion 5 Raanana</FullCallAddress>
+    <Latitude>32.180409</Latitude>
+    <Longitude>34.87231</Longitude>
+    <OpeningTime>2024-12-07T00:00:00</OpeningTime>
+    <VerbalDescription>The unit is requesting a workshop on stress management.</VerbalDescription>
+    <MaxTimeToFinish>2027-12-07T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>29</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>HaEshel 7 Raanana</FullCallAddress>
+    <Latitude>32.1916612</Latitude>
+    <Longitude>34.8585775</Longitude>
+    <OpeningTime>2023-03-29T00:00:00</OpeningTime>
+    <VerbalDescription>Personal belongings need safe storage for a few days.</VerbalDescription>
+    <MaxTimeToFinish>2026-03-29T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>30</Id>
+    <Type>Laundry</Type>
+    <FullCallAddress>Dizengoff 48 Tel Aviv</FullCallAddress>
+    <Latitude>32.0748561</Latitude>
+    <Longitude>34.7761884</Longitude>
+    <OpeningTime>2023-08-18T00:00:00</OpeningTime>
+    <VerbalDescription>Rain gear is required for the soldiers on patrol. Can anyone bring it?</VerbalDescription>
+    <MaxTimeToFinish>2026-08-18T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>31</Id>
+    <Type>EventOrganization</Type>
+    <FullCallAddress>Rothschild 22 Tel Aviv</FullCallAddress>
+    <Latitude>32.0627896</Latitude>
+    <Longitude>34.7714756</Longitude>
+    <OpeningTime>2024-06-21T00:00:00</OpeningTime>
+    <VerbalDescription>A soldier who excelled in combat wants to share his story.</VerbalDescription>
+    <MaxTimeToFinish>2027-06-21T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>32</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Ibn Gabirol 15 Tel Aviv</FullCallAddress>
+    <Latitude>32.0726935</Latitude>
+    <Longitude>34.7816096</Longitude>
+    <OpeningTime>2023-11-10T00:00:00</OpeningTime>
+    <VerbalDescription>Temporary storage is required for heavy equipment.</VerbalDescription>
+    <MaxTimeToFinish>2026-11-10T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>33</Id>
+    <Type>StorageOfBelongings</Type>
+    <FullCallAddress>Dizengoff 102 Tel Aviv</FullCallAddress>
+    <Latitude>32.0796074</Latitude>
+    <Longitude>34.7740421</Longitude>
+    <OpeningTime>2024-08-20T00:00:00</OpeningTime>
+    <VerbalDescription>Critical supplies need transportation to the frontline. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2027-08-20T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>34</Id>
+    <Type>EventOrganization</Type>
+    <FullCallAddress>Allenby 99 Tel Aviv</FullCallAddress>
+    <Latitude>32.0646173</Latitude>
+    <Longitude>34.7726696</Longitude>
+    <OpeningTime>2023-08-27T00:00:00</OpeningTime>
+    <VerbalDescription>First aid assistance is needed at the base immediately.</VerbalDescription>
+    <MaxTimeToFinish>2026-08-27T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>35</Id>
+    <Type>EquipmentRepair</Type>
+    <FullCallAddress>King George 29 Tel Aviv</FullCallAddress>
+    <Latitude>32.0717837</Latitude>
+    <Longitude>34.7731051</Longitude>
+    <OpeningTime>2023-12-09T00:00:00</OpeningTime>
+    <VerbalDescription>A farewell party for a retiring officer is being arranged.</VerbalDescription>
+    <MaxTimeToFinish>2026-12-09T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>36</Id>
+    <Type>StorageOfBelongings</Type>
+    <FullCallAddress>Shenkin 17 Tel Aviv</FullCallAddress>
+    <Latitude>32.0695395</Latitude>
+    <Longitude>34.7723678</Longitude>
+    <OpeningTime>2023-10-29T00:00:00</OpeningTime>
+    <VerbalDescription>A soldier's backpack strap is broken. Who can help repair it?</VerbalDescription>
+    <MaxTimeToFinish>2026-10-29T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>37</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Bograshov 20 Tel Aviv</FullCallAddress>
+    <Latitude>32.0769951</Latitude>
+    <Longitude>34.7692827</Longitude>
+    <OpeningTime>2024-10-17T00:00:00</OpeningTime>
+    <VerbalDescription>Organizing a talk to inspire the unit. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2027-10-17T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>38</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>Frishman 22 Tel Aviv</FullCallAddress>
+    <Latitude>32.0797596</Latitude>
+    <Longitude>34.7706442</Longitude>
+    <OpeningTime>2023-02-09T00:00:00</OpeningTime>
+    <VerbalDescription>Help is needed to set up a morale-boosting event for the soldiers.</VerbalDescription>
+    <MaxTimeToFinish>2026-02-09T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>39</Id>
+    <Type>FoodDelivery</Type>
+    <FullCallAddress>Yehuda HaMaccabi 15 Tel Aviv</FullCallAddress>
+    <Latitude>32.0938841</Latitude>
+    <Longitude>34.7860657</Longitude>
+    <OpeningTime>2023-01-02T00:00:00</OpeningTime>
+    <VerbalDescription>Support is needed for soldiers dealing with stress.</VerbalDescription>
+    <MaxTimeToFinish>2026-01-02T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>40</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>Mikve Israel 19 Tel Aviv</FullCallAddress>
+    <Latitude>32.062857</Latitude>
+    <Longitude>34.7770402</Longitude>
+    <OpeningTime>2023-03-31T00:00:00</OpeningTime>
+    <VerbalDescription>There is a unit in the area who needs food. Who can deliver?</VerbalDescription>
+    <MaxTimeToFinish>2026-03-31T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>41</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Weizmann 35 Kfar Saba</FullCallAddress>
+    <Latitude>32.177421</Latitude>
+    <Longitude>34.899857</Longitude>
+    <OpeningTime>2023-11-26T00:00:00</OpeningTime>
+    <VerbalDescription>A volunteer doctor is required for a quick health check-up.</VerbalDescription>
+    <MaxTimeToFinish>2026-11-26T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>42</Id>
+    <Type>MedicalHelp</Type>
+    <FullCallAddress>Herzl 12 Kfar Saba</FullCallAddress>
+    <Latitude>32.1709483</Latitude>
+    <Longitude>34.9104764</Longitude>
+    <OpeningTime>2024-02-14T00:00:00</OpeningTime>
+    <VerbalDescription>A group of soldiers needs transport back to their barracks.</VerbalDescription>
+    <MaxTimeToFinish>2027-02-14T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>43</Id>
+    <Type>MotivationalTalks</Type>
+    <FullCallAddress>Weizmann 50 Kfar Saba</FullCallAddress>
+    <Latitude>32.1765135</Latitude>
+    <Longitude>34.9015956</Longitude>
+    <OpeningTime>2023-11-03T00:00:00</OpeningTime>
+    <VerbalDescription>Critical supplies need transportation to the frontline. Who can assist?</VerbalDescription>
+    <MaxTimeToFinish>2026-11-03T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>44</Id>
+    <Type>EquipmentRepair</Type>
+    <FullCallAddress>Arlozorov 25 Kfar Saba</FullCallAddress>
+    <Latitude>32.1708769</Latitude>
+    <Longitude>34.9047851</Longitude>
+    <OpeningTime>2024-11-24T00:00:00</OpeningTime>
+    <VerbalDescription>A family nearby cooked meals; we need help delivering them.</VerbalDescription>
+    <MaxTimeToFinish>2027-11-24T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>45</Id>
+    <Type>StorageOfBelongings</Type>
+    <FullCallAddress>Dizengoff 55 Tel Aviv</FullCallAddress>
+    <Latitude>32.0754236</Latitude>
+    <Longitude>34.7748328</Longitude>
+    <OpeningTime>2023-02-26T00:00:00</OpeningTime>
+    <VerbalDescription>Looking for a motivational speaker to uplift the soldiers.</VerbalDescription>
+    <MaxTimeToFinish>2026-02-26T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>46</Id>
+    <Type>MotivationalTalks</Type>
+    <FullCallAddress>Herzl 78 Kfar Saba</FullCallAddress>
+    <Latitude>32.1772724</Latitude>
+    <Longitude>34.9121208</Longitude>
+    <OpeningTime>2023-01-25T00:00:00</OpeningTime>
+    <VerbalDescription>Personal belongings need safe storage for a few days.</VerbalDescription>
+    <MaxTimeToFinish>2026-01-25T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>47</Id>
+    <Type>Laundry</Type>
+    <FullCallAddress>Tel Hai 33 Kfar Saba</FullCallAddress>
+    <Latitude>32.1737073</Latitude>
+    <Longitude>34.9138018</Longitude>
+    <OpeningTime>2024-06-14T00:00:00</OpeningTime>
+    <VerbalDescription>A group of soldiers needs transport back to their barracks.</VerbalDescription>
+    <MaxTimeToFinish>2027-06-14T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>48</Id>
+    <Type>Rides</Type>
+    <FullCallAddress>HaRav Maimon 6 Herzliya</FullCallAddress>
+    <Latitude>32.1652867</Latitude>
+    <Longitude>34.83199</Longitude>
+    <OpeningTime>2023-09-05T00:00:00</OpeningTime>
+    <VerbalDescription>We’re planning a motivational session for the soldiers.</VerbalDescription>
+    <MaxTimeToFinish>2026-09-05T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>49</Id>
+    <Type>EquipmentDelivery</Type>
+    <FullCallAddress>Rothschild 9 Kfar Saba</FullCallAddress>
+    <Latitude>32.1709569</Latitude>
+    <Longitude>34.9070413</Longitude>
+    <OpeningTime>2023-09-02T00:00:00</OpeningTime>
+    <VerbalDescription>A soldier who excelled in combat wants to share his story.</VerbalDescription>
+    <MaxTimeToFinish>2026-09-02T00:00:00</MaxTimeToFinish>
+  </Call>
+  <Call>
+    <Id>50</Id>
+    <Type>Laundry</Type>
+    <FullCallAddress>Sokolov 3 Kfar Saba</FullCallAddress>
+    <Latitude>32.1762246</Latitude>
+    <Longitude>34.9028277</Longitude>
+    <OpeningTime>2024-07-04T00:00:00</OpeningTime>
+    <VerbalDescription>Extra food supplies are required for tomorrow's operations.</VerbalDescription>
+    <MaxTimeToFinish>2027-07-04T00:00:00</MaxTimeToFinish>
+  </Call>
+</ArrayOfCall>

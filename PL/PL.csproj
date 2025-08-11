@@ -1,0 +1,47 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+	  <BaseOutputPath>$(SolutionDir)\bin\</BaseOutputPath>
+    <OutputPath>$(SolutionDir)\bin\</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+    <UseCommonOutputDirectory>true</UseCommonOutputDirectory>
+	  <OutputPath>$(SolutionDir)\bin\</OutputPath>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	  <ApplicationIcon>image\favicon.ico</ApplicationIcon>
+	  
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="image\image13.jpeg" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <ProjectReference Include="..\BL\BL.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="image\favicon.ico" />
+    <Content Include="image\image1.jpeg" />
+    <Resource Include="image\image10.jpeg" />
+    <Resource Include="image\image11.jpeg" />
+    <Resource Include="image\image12.jpeg" />
+    <Resource Include="image\image13.jpeg" />
+	<Resource Include="image\image2.jpeg" />
+	<Resource Include="image\image3.jpg" />
+	<Resource Include="image\image4.jpg" />
+	<Resource Include="image\image5.jpeg" />
+	<Resource Include="image\image6.jpeg" />
+	<Resource Include="image\image7.jpeg" />
+	<Resource Include="image\image8.jpeg" />
+	<Resource Include="image\image9.jpeg" />
+  </ItemGroup>
+
+</Project>

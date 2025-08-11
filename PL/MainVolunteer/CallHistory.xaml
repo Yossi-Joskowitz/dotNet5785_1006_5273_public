@@ -1,0 +1,75 @@
+﻿<Window x:Class="PL.MainVolunteer.CallHistory"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.MainVolunteer"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="CallHistory" Height="450" Width="800"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="250"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <!-- Label for "calls history" -->
+            <Label  Grid.ColumnSpan="2" Content="calls history" HorizontalAlignment="center"  VerticalAlignment="Top" Height="auto" Width="auto" Background="#FFAEAEAE" FontWeight="Bold" FontSize="23" Margin="0,20,0,0"/>
+            <!-- Filter selection box -->
+            <ComboBox Grid.Column="0" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="auto" 
+                Text="Select an option to filter"  SelectedValue="{Binding Filter, Mode=TwoWay}" SelectionChanged="ComboBox_SelectionChanged"
+                IsEditable="True" ItemsSource="{Binding Source={StaticResource CallTypeCollectionKey}}"
+                ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip = "Filtering by a certain value" />
+            <!-- Sort selection box -->
+            <ComboBox Grid.Column="1" HorizontalAlignment="Center"  VerticalAlignment="Center" Width="auto" Text="Select an option to sort"  SelectedValue="{Binding Sort, Mode=TwoWay}" 
+                      SelectionChanged="ComboBox_SelectionChanged"
+            IsEditable="True" ItemsSource="{Binding Source={StaticResource ClosedCallsCollectionKey}}"
+            ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip = "Sorting by a certain value" />
+        </Grid>
+
+        <!-- DataGrid for displaying the closed calls -->
+        <DataGrid ItemsSource="{Binding Path=ClosedCalls}" Grid.Row="1" Width="Auto"
+                  IsReadOnly="True" FontWeight="ExtraBold" AutoGenerateColumns="False" 
+                  RowBackground="LightGray" AlternatingRowBackground="White" Background="Transparent">
+            <DataGrid.Columns>
+
+                <!-- Columns for ClosedCallInList details -->
+                <DataGridTextColumn Binding="{Binding CallId}" Header="Call ID" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding Type}" Header="Call Type" Width="Auto"/>
+                <DataGridTextColumn Binding="{Binding FullCallAddress}" Header="Full Address" Width="Auto"/>
+
+                <!-- Displaying the Opening Time -->
+                <DataGridTextColumn Binding="{Binding OpeningTime, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="Opening Time" Width="Auto"/>
+
+                <!-- Displaying the Entering Time -->
+                <DataGridTextColumn Binding="{Binding EnteringTime, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="Entering Time" Width="Auto"/>
+
+                <!-- Displaying the End Time -->
+                <DataGridTextColumn Binding="{Binding EndOfTime, StringFormat='yyyy-MM-dd HH:mm:ss'}" Header="End Time" Width="Auto"/>
+
+                <!-- Displaying the Assignment Status -->
+                <DataGridTextColumn Binding="{Binding Status}" Header="Status" Width="Auto"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <!-- Background for the window-->
+        <Image Grid.ColumnSpan="2" Grid.RowSpan="3" Opacity="0.1" Stretch="Fill" Canvas.ZIndex="-1" Source="/image/image5.jpeg"/>
+       
+        <!-- Thank you lines -->
+        <TextBlock Grid.Row="2" FontSize="20" FontWeight="Bold" Text="{Binding Volunteer.FullName}" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Label Content="Thank you for your service " HorizontalAlignment="Center"  Grid.Row="2" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" />
+               
+    </Grid>
+   
+    
+</Window>

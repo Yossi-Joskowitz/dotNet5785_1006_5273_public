@@ -1,0 +1,238 @@
+﻿<Window x:Class="PL.MainVolunteer.MainVolunteerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL.MainVolunteer"
+        xmlns:xaml="clr-namespace:XamlHelpers"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="MainVolunteerWindow" Height="700" Width="850"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed"
+        >
+    <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"  MinWidth="400"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <!-- Entry line -->
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Grid.ColumnSpan="2">
+            <TextBlock FontSize="20" FontWeight="Bold">
+                 Welcome <Run Text="{Binding Volunteer.FullName}" />
+            </TextBlock>
+        </StackPanel>
+        <!-- window frame -->
+        <Border Grid.Column="0" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10"  Margin="10,70,10,20">
+            <!-- The volunteer details -->
+            <Grid Margin="50,40,30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- ID -->
+                <Label Content="ID:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left"  Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="2" IsReadOnly="True" />
+
+                <!-- Full Name -->
+                <Label Content="Full Name:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold" />
+                <TextBox Text="{Binding Volunteer.FullName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" Margin="2" IsReadOnly="False"/>
+
+                <!-- Phone Number -->
+                <Label Content="Phone Number:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.PhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="2" />
+                <!-- Full Address -->
+                <Label Content="Full Address:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.FullAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" Grid.Column="1" VerticalAlignment="Center" Margin="2" />
+
+
+                <!-- Password -->
+                <Label Content="Password:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" FontWeight="ExtraBold"/>
+                <Grid  Grid.Row="4" Grid.Column="1" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <PasswordBox Grid.Row="0" Width="120" Margin="1" VerticalAlignment="Top" HorizontalAlignment="Center"  xaml:Secure.Password="{Binding Volunteer.Password, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+                    <TextBox Margin="1" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="120"
+                         Text="{Binding Volunteer.Password,UpdateSourceTrigger=PropertyChanged, ValidatesOnExceptions=True}"
+                         Visibility="{Binding IsPasswordVisible, Converter={StaticResource BooleanToVisibilityConverterKey}}"/>
+                    <CheckBox IsChecked="{Binding IsPasswordVisible ,Mode=TwoWay}" Grid.Row="1" Content="show" HorizontalAlignment="Center" Margin="1"  VerticalAlignment="Bottom"
+                               ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip = "Check to see the password"/>
+
+                </Grid>
+
+                <!--<Label Content="Password:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" FontWeight="ExtraBold"/>
+                <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" >
+                    <TextBox Visibility="{Binding IsPasswordVisible, Converter={StaticResource BooleanToVisibilityConverterKey}}" Text="{Binding Volunteer.Password, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}"
+                 Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" Margin="5"  MinWidth="30"/>
+                    <CheckBox IsChecked="{Binding IsPasswordVisible ,Mode=TwoWay}" Grid.Column="1" Grid.Row="4" Content="show" HorizontalAlignment="Left" Margin="2"  VerticalAlignment="Center"/>
+                </StackPanel>-->
+                <!-- Email -->
+                <Label Content="Email:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.Email, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" Margin="2"  />
+
+                <!-- Active -->
+                <Label Content="Active:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <CheckBox IsChecked="{Binding Volunteer.Active, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" Margin="2" 
+                           ToolTipService.InitialShowDelay="100" ToolTipService.ShowDuration="5000" ToolTip = "Check to see the password"/>
+                <!-- Number of Calls Treated -->
+                <Label Content="Calls Treated:" Grid.Row="7" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.NumberOfCallsThatTreated, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="7" Grid.Column="1" VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+                <!-- Number of Calls That Self-Canceled -->
+                <Label Content="Self-Canceled Calls:" Grid.Row="8" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.NumberOfCallsThatSelfCanceled, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="8" Grid.Column="1" VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+                <!-- Number of Calls Taken and Expired -->
+                <Label Content="Expired Calls:" Grid.Row="9" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.NumberOfCallsTakenAndExpired, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="9" Grid.Column="1" VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+
+                <!-- Distance Type -->
+                <Label Content="Distance Type:" Grid.Row="10" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <ComboBox  SelectedValue="{Binding Volunteer.DistanceType, Mode=TwoWay}" IsEditable="False" ItemsSource="{Binding Source={StaticResource VolunteerDistanceCollectionKey}}"
+                           Grid.Row="10" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="2" />
+                <!-- Max Distance -->
+                <Label Content="Max Distance:" Grid.Row="11" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Volunteer.MaxDistance, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="11" Grid.Column="1" VerticalAlignment="Center" Margin="2" />
+
+                <!-- Submit Button (Update Volunteer) -->
+                <Button Content="Update" Height="30" Width="70" Click="UpdateButten_Click" Grid.Row="12" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center" ToolTip="Tap to update details" ToolTipService.InitialShowDelay="10" ToolTipService.ShowDuration="5000"/>
+            </Grid>
+        </Border>
+        <!--window frame    -->
+        <Border Grid.Column="1" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10"  Margin="10,70,10,20"
+                Visibility="{Binding CallInProgres, Converter={StaticResource BooleanToVisibilityConverterKey}}">
+            <!-- Call in progras details-->
+            <Grid Grid.Column="1" Margin="10,50,0,0" Visibility="{Binding CallInProgres , Converter={StaticResource BooleanToVisibilityConverterKey}}" MaxWidth="250" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+
+                </Grid.RowDefinitions>
+
+                <!--Id-->
+                <Label Content="ID:" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.Id, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="0" Grid.Column="1" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" IsReadOnly="True" />
+
+                <!--Call Type-->
+                <Label Content="Type:" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.Type, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="30" Margin="2" IsReadOnly="True" />
+
+                <!--Verbal Description-->
+                <Label Content="Description:" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.VerbalDescription, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="2" Grid.Column="1" MinWidth="30" TextWrapping="Wrap" Width="auto" Height="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+                <!--Full Address-->
+                <Label Content="Address:" Grid.Row="3" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.FullAddress, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="3" MinWidth="30" Grid.Column="1" VerticalAlignment="Center" Width="auto" HorizontalAlignment="Left" Margin="5" IsReadOnly="True"/>
+
+                <!--Opening Time-->
+                <Label Content="Opening Time:" Grid.Row="4" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.OpeningTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" MinWidth="30" VerticalAlignment="Center" Width="auto" HorizontalAlignment="Left" Grid.Row="4" Grid.Column="1" IsReadOnly="True"/>
+
+                <!--Max Time-->
+                <Label Content="Max Time:" Grid.Row="5" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.MaxTime, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="5" Grid.Column="1" Width="auto" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+                <!--Status Type-->
+                <Label Content="Status:" Grid.Row="6" Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="2" FontWeight="ExtraBold"/>
+                <TextBox Text="{Binding Call.StatusType, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" Grid.Row="6" MinWidth="30" Grid.Column="1" Width="auto" HorizontalAlignment="Left"  VerticalAlignment="Center" Margin="2" IsReadOnly="True"/>
+
+
+                <Label Content="Assignments:" Grid.Row="7" Grid.Column="0"  Margin="1" Height="auto"  FontWeight="ExtraBold" Grid.RowSpan="2"/>
+                <DataGrid ItemsSource="{Binding Call.AssignInList}"
+                  Grid.Row="8"
+                  Grid.ColumnSpan="2"   
+                  AutoGenerateColumns="True" 
+                  VerticalAlignment="Bottom" 
+                  HorizontalAlignment="Stretch" 
+                  Margin="2" 
+                  Height="100" Width="auto" 
+                  IsReadOnly="True" />
+                <Grid Grid.Row="9" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Button Content="Cancel" Height="30" Width="70" Click="CancelButten_Click" Grid.Column="0" Margin="2"  HorizontalAlignment="Center" ToolTip="Tap to cancel taking the call you selected" ToolTipService.InitialShowDelay="10" ToolTipService.ShowDuration="5000"/>
+                    <Button Content="End" Height="30" Width="70" Click="EndButten_Click" Grid.Column="1" Margin="2"  HorizontalAlignment="Center" ToolTip="Tap to update care completion" ToolTipService.InitialShowDelay="10" ToolTipService.ShowDuration="5000"/>
+
+                </Grid>
+
+            </Grid>
+        </Border>
+        <Grid Grid.Column="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!--Setting the button that leads to calling history-->
+            <Button Content="Calls history" Click="Button_history" HorizontalAlignment="Center" FontSize="15"
+            Height="100" Width="100" VerticalAlignment="Center" Foreground="#FF030303" FontWeight="Bold" ToolTip="Tap to see your calls history" ToolTipService.InitialShowDelay="10" ToolTipService.ShowDuration="5000">
+                <Button.Background>
+                    <ImageBrush ImageSource="/image/image6.jpeg" Stretch="Uniform" TileMode="None" Opacity="0.4" />
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="50" Background="{TemplateBinding Background}" BorderBrush="#FF1C1B1B" BorderThickness="0.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <!--Setting the button that leads to Call selection-->
+            <Button Content="Call selection" Click="Button_selection" HorizontalAlignment="Center" Height ="100" Width="100" Grid.Row="1" FontSize="15"
+                    VerticalAlignment="Center" Foreground="#FF030303" FontWeight="Bold" ToolTip="Tap to select a call to care" ToolTipService.InitialShowDelay="10" ToolTipService.ShowDuration="5000" >
+                <Button.Background>
+                    <ImageBrush ImageSource="/image/image6.jpeg" Stretch="Uniform" TileMode="None" Opacity="0.4" />
+                </Button.Background>
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="50" Background="{TemplateBinding Background}" BorderBrush="#FF1C1B1B" BorderThickness="0.5">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
+
+        <!-- Background Image: Background image for the window -->
+        <Image Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.1" Stretch="Fill" Canvas.ZIndex="-1" Source="/image/image5.jpeg"/>
+    </Grid>
+</Window>

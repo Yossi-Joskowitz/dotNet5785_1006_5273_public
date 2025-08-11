@@ -1,0 +1,25 @@
+﻿<Application x:Class="PL.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:PL"
+             StartupUri="loginScreen.xaml">
+    <Application.Resources>
+        <local:VolunteerInListCollection x:Key="VolunteerInListCollectionKey" />
+        <local:CallInListCollection x:Key="CallInListCollectionKey" />
+        <local:CallStatusCollection x:Key="CallStatusCollectionKey" />
+        <local:CallTypeCollection x:Key="CallTypeCollectionKey" />
+        <local:VolunteerDistanceCollection x:Key="VolunteerDistanceCollectionKey" />
+        <local:VolunteerTypeCollection x:Key="VolunteerTypeCollectionKey" />
+        <local:IDEditableConverter x:Key="IDEditableConverterKey" />
+        <local:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverterKey" />
+        <local:BooleanToVisibilityFalseConverter x:Key="BooleanToVisibilityFalseConverterKey" />
+        <local:VolunteerVisibilityForDeleteConverter x:Key="VolunteerVisibilityForDeleteConverterKey" />
+        <local:CallVisibilityDeleteConverter x:Key="CallVisibilityDeleteConverterKey" />
+        <local:ObjectToKeyValuePairsConverter x:Key="ObjectToKeyValuePairsConverterKey"/>
+        <local:CallVisibilityForCancelConverter x:Key="CallVisibilityForCancelConverterKey"/>
+        <local:ClosedCallsCollection x:Key="ClosedCallsCollectionKey"/>
+        <local:OpenCallsCollection x:Key="OpenCallsCollectionKey"/>
+        <local:IsEnabledfalseToTrueConvert x:Key="IsEnabledfalseToTrueConvertKey"/>
+    </Application.Resources>
+</Application>
+

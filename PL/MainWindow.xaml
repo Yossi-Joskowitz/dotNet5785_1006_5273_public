@@ -1,0 +1,142 @@
+﻿<Window x:Class="PL.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PL"
+        mc:Ignorable="d"
+        DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}"
+        Title="MainWindow" Height="450" Width="900"
+        ResizeMode="NoResize"
+        Loaded="Window_Loaded"
+        Closed="Window_Closed">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="350"/>
+            <RowDefinition Height="86"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="65*"/>
+            <ColumnDefinition Width="58*"/>
+        </Grid.ColumnDefinitions>
+        <!-- Clock: Contains the current time and buttons to add time -->
+        <Label  Grid.Column="0" Content="Clock" FontWeight="Bold" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Top" Height="54" Margin="10,25,0,0" Grid.RowSpan="2"/>
+        <Border Grid.Column="0" Grid.Row="1" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10" VerticalAlignment="Center" Margin="10,0,10,0" Height="330">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <!-- Label showing the current date and time -->
+                <Label Content="{Binding CurrentTime}" ContentStringFormat="dd/MM/yyyy HH:mm:ss" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Height="54" Grid.Row="0"/>
+                <!-- Simulator -->
+                <Label Content="    Enter the minutes:" Padding="0" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Top" Height="15" Margin="0,10,15,0" Background="{x:Null}"  Width="100" Grid.Row="1"/>
+                <TextBox Text="{Binding NumberOfMinutes}" Padding="0" FontSize="10" HorizontalAlignment="Right" VerticalAlignment="Top" Height="15" Grid.Row="1" Width="100" Margin="0,25,15,0" IsReadOnly="{Binding IsSimulatorRunning}" />
+                <Button Content="{Binding SimulatorStatus}" Click="StartOrStopSimulatorButten_Click" Height="30" Width="100" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="15,10,0,0" Grid.Row="1"/>
+                <!-- Buttons for adding time -->
+                <Button Content="Add One Minute"  Click="AddOneMinuteButten_Click"  Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,50,0,0" Grid.Row="1" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}" />
+                <Button Content="Add One Hour" Click="AddOneHourButten_Click"  Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top"  Margin="0,90,0,0" Grid.Row="1" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+                <Button Content="Add One Day" Click="AddOneDayButten_Click" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,130,0,0" Grid.Row="1" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+                <Button Content="Add One Month" Click="AddOneMonthButten_Click" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,170,0,0" Grid.Row="1" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+                <Button Content="Add One Year" Click="AddOneYearButten_Click" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,210,0,0" Grid.Row="1" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+            </Grid>
+        </Border>
+
+        <Label Grid.Column="1" Grid.Row="0" Content="Management" FontWeight="Bold" FontSize="20" Margin="9,22,155,342" Panel.ZIndex="1" Grid.RowSpan="2"/>
+        <!-- Volunteer List: Buttons for volunteer management -->
+        <Label Content="Risk Range" Grid.Row="0" Grid.Column="2" FontWeight="Bold" FontSize="20" Canvas.ZIndex="1" VerticalAlignment="Top" Height="54" Padding="20,10"  Margin="10,16,1,0" Grid.RowSpan="2"  />
+        <Border Grid.Column="1" Grid.Row="1" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10" Margin="10,10,10,10">
+            <StackPanel Grid.Column="1" Grid.Row="1">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="Button">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top"  />
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                        <Setter Property="Margin" Value="0,10" />
+                        <Setter Property="Foreground" Value="#FF060505" />
+                        <Setter Property="FontWeight" Value="UltraBold" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="FontWeight" Value="UltraBold" />
+                        <Setter Property="Background" Value="Transparent" />
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Setter Property="Height" Value="50" />
+                        <Setter Property="Width" Value="auto" />
+                        <Setter Property="ToolTipService.InitialShowDelay" Value="1000" />
+                        <Setter Property="ToolTipService.ShowDuration" Value="5000" />
+
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand" />
+                                <Setter Property="ContentTemplate">
+                                    <Setter.Value>
+                                        <DataTemplate>
+                                            <StackPanel>
+                                                <TextBlock Text="{Binding}" />
+                                                <Border Height="2" Background="Black" HorizontalAlignment="Stretch" />
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </StackPanel.Resources>
+                <!--Buttons for lists, and initialize or reset the database-->
+                <Button  Content="Volunteer List" Click="HandleVolunteerInListButten_Click"  Margin="0,30,0,0" ToolTip = "Tap to see all volunteers in the system"/>
+                <Button  Content="Call List" Click="HandleCallInListButten_Click" ToolTip = "Tap to see all call in the system"/>
+                <Button Content="Initialize Database" Click="InitializeDBButten_Click"  ToolTip = "Tap to Initialize the system" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+                <Button  Content="Reset Database" Click="ResetDBButten_Click"  ToolTip = "Tap to Reset the system" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}"/>
+            </StackPanel>
+        </Border>
+        <Grid Grid.Column="2" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <!-- Risk Range: Display and update the risk range -->
+            <Border Grid.Row="0" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10" Margin="10,10,10,10">
+                <Grid>
+                    <!-- Label for the risk range -->
+                    <!-- Textbox for displaying the risk range -->
+                    <TextBox  Text="{Binding RiskRange}" Grid.Row="1" VerticalAlignment="Top" Margin="0,10"
+                    Width="Auto" FontWeight="Bold" FontSize="20"  HorizontalAlignment="Center" Background="{x:Null}" BorderBrush="{x:Null}" />
+                    <!-- Button to update the risk range -->
+                    <Button Content="Update the Risk Range" Click="SetRiskRangeButten_Click" HorizontalAlignment="Center" Margin="0,0,0,30" VerticalAlignment="Bottom" Height="36" Width="auto" Grid.Column="2" IsEnabled = "{Binding IsSimulatorRunning,Converter = {StaticResource IsEnabledfalseToTrueConvertKey}}" />
+                </Grid>
+            </Border>
+            <Grid Grid.Row="1">
+                <Label  Content="Number of call" FontWeight="Bold" FontSize="20" Padding="0" Margin="20,0"/>
+            </Grid>
+            <Border Grid.Row="2" BorderBrush="#FF6E756A" BorderThickness="3" Padding="10" Margin="10,10,10,10">
+                <Grid Grid.Row="2" >
+                    <ListBox ItemsSource="{Binding CallStatus}" Height="auto" FontWeight="Bold" Background="Transparent"
+                             SelectionChanged="ListBox_SelectionChanged" 
+                             SelectionMode="Single"
+                        SelectedItem="{Binding SelectedCallStatus, Mode=TwoWay}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="{Binding Key}" Width="auto"/>
+                                    <TextBlock Text=": "/>
+                                    <TextBlock Text="{Binding Value}" Width="50" />
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Background Image: Background image for the window -->
+        <Image Source="image/image5.jpeg" Grid.ColumnSpan="3" Grid.RowSpan="3" Opacity="0.1" Stretch="Fill" Canvas.ZIndex="-1" Margin="0,0,1,51" />
+    </Grid>
+
+</Window>
