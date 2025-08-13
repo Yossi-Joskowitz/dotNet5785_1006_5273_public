@@ -8,7 +8,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C243FF51-738F-4132-ACEC-1C60F40C25DB}"
 	ProjectSection(SolutionItems) = preProject
 		README.md = README.md
-		דוח פרויקט.docx = דוח פרויקט.docx
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DalFacade", "DalFacade\DalFacade.csproj", "{75D7D0BA-6777-4647-B604-0D091D41EED8}"
